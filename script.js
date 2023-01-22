@@ -55,7 +55,8 @@ var weather = [
 	{ type: 'wind', name: 'Windy'}, 
 	{ type: 'rain', name: 'Rain'}, 
 	{ type: 'thunder', name: 'Storms'},
-	{ type: 'sun', name: 'Sunny'}
+	{ type: 'sun', name: 'Sunny'},
+	{ type: 'cloudy', name: 'Cloudy'}
 ];
 
 // 🛠 app settings

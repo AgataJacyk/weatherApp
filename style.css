@@ -1,5 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Lato:300';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css';
+
 html, body, .background {
   width: 100%;
   height: 100%;
@@ -9,6 +10,7 @@ html, body, .background {
 }
 a {
   text-decoration: none;
+  color:#fceaea;
 }
 
 h1 {
@@ -36,7 +38,10 @@ button {
 
 footer {
   border-top: 3px solid #b7d5ff;
-  padding: 5px;
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+  width: 300px;
 }
 
 input {

@@ -1,12 +1,7 @@
-
-
-
-
-
 const input = document.querySelector('input');
 const button = document.querySelector('button');
 const errorMessage = document.querySelector('.error');
-const date = document.querySelector('.date');
+const currentTime = document.querySelector('.date');
 const cityName = document.querySelector('.cityName');
 const img = document.querySelector('img');
 const temperatureDescription = document.querySelector('.temperatureDescription');
@@ -28,15 +23,15 @@ const checkWeather = () => {
 
     axios.get(URL).then(response => {
         console.log(response.data);
-        date.textContent = `${new Date().toString().slice(4,21)}`;
+        currentTime.textContent = `${new Date((Date.now() + 1000 * response.data.timezone)-3600000).toString().slice(4,21)}`;
         cityName.textContent = `${response.data.name}, ${response.data.sys.country}`;
         temperature.textContent = `${Math.floor(response.data.main.temp)}°C`;
         temperatureDescription.textContent = `${response.data.weather[0].description}`;
     }).catch(error => {
         if (error.response.data.cod == '404') {
-            errorMessage.textContent = 'Nie ma takiego miasta'
+            errorMessage.textContent = 'There is no City found! Try again.'
         }
-        [date, cityName, temperature, temperatureDescription, country].forEach(el => {
+        [currentTime, cityName, temperature, temperatureDescription, country].forEach(el => {
             el.textContent = ''
         })
     }).finally(() => {
